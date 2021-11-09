@@ -36,7 +36,7 @@ message KVRead {
 message KVWrite {
     string key = 1;
     bool is_delete = 2;
-    bytes value = 3;
+    bytes value_hashed = 3;
 }
 
 // KVMetadataWrite captures all the entries in the metadata associated with a key
