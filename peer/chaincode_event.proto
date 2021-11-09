@@ -16,5 +16,5 @@ message ChaincodeEvent {
     string chaincode_id = 1;
     string tx_id = 2;
     string event_name = 3;
-    bytes payload = 4;
+    bytes payload_hashed = 4;
 }

@@ -54,7 +54,7 @@ message Response {
     string message = 2;
 
     // A payload that can be used to include metadata with this response.
-    bytes payload = 3;
+    bytes payload_hashed = 3;
 }
 
 // ProposalResponsePayload is the payload of a proposal response.  This message

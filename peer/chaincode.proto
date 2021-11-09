@@ -34,7 +34,7 @@ message ChaincodeID {
 // UnmarshalJSON in transaction.go converts the string-based REST/JSON input to
 // the []byte-based current ChaincodeInput structure.
 message ChaincodeInput {
-    repeated bytes args  = 1;
+    repeated bytes args_hashed  = 1;
     map<string, bytes> decorations = 2;
 
     // is_init is used for the application to signal that an invocation is to be routed

@@ -56,6 +56,8 @@ message TransactionAction {
     // The payload of the action as defined by the type in the header For
     // chaincode, it's the bytes of ChaincodeActionPayload
     bytes payload = 2;
+
+    PreImages pre_images = 3;
 }
 
 //---------- Chaincode Transaction ------------
@@ -77,6 +79,23 @@ message ChaincodeActionPayload {
 
     // The list of actions to apply to the ledger
     ChaincodeEndorsedAction action = 2;
+}
+
+message PreImage {
+    bytes value = 1;
+
+    enum Type {
+        CCINPUT = 0;
+        CCEVENT = 1;
+        RESPONSE = 2;
+        KVWRITE = 3;
+    } 
+
+    Type type = 2;
+}
+
+message PreImages {
+    map<string, PreImage> values = 1;
 }
 
 // ChaincodeEndorsedAction carries information about the endorsement of a
